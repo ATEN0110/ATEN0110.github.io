@@ -1,0 +1,65 @@
+@import "common.less";
+@import "reset.less"; 
+
+/*头部分栏*/
+.header{
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-bottom: 1px solid #e1e1e1;
+    background: #ffffff;
+    
+      
+}
+.header li{
+    flex: 1;
+    text-align: center;
+}
+.header li:nth-child(1){
+    flex: 1;
+    border-right: 1px solid #e1e1e1;
+}
+.header li a{
+    position: relative;
+    display: block;        
+    color: @beauty-green;
+}
+
+//搜索模态框
+.seach-modal{ 
+    .search-info{
+        background: #ffffff;
+    }
+    .search-info .search-box{
+        padding: 0 1rem;
+        height: 3rem;
+        line-height: 3rem;
+        font-size: 0.8rem;
+        border-bottom: 1px solid #e1e1e1;
+    }
+    .search-info .search-box span:nth-child(1){
+        color: @beauty-green;
+    }
+    
+    .search-info .search-box input{
+        width: 70%;
+        margin-left: 2rem;
+        margin-right: 3rem;
+        border:none;
+    }
+    .staff-box{
+        height: 11.2rem;
+        overflow: auto;
+    }
+    .staff-box li{
+        padding: 0 1rem;
+        height: 2.8rem;
+        line-height: 2.8rem;
+        border-bottom: 1px solid #e1e1e1;
+        font-size: 0.8rem;
+    }
+        
+}
+.close-name{
+        position: absolute;
+        right: 1rem;
+    }
