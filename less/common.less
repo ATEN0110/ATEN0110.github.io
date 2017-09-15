@@ -1,0 +1,116 @@
+//美业 -绿
+@beauty-green:   #1AC1B3; 
+@beauty-danger:  #fe7d7f;
+@beauty-gray: #f7f7f8;
+@beauty-blue: #3398db;
+ 
+//flex 布局
+.flex-row{
+    display: flex;
+}
+.bg-white{
+    background: #ffffff;
+}
+.bg-green{
+    background: @beauty-green;
+}
+.text-center{
+    text-align: center;
+}
+
+//自定义 日期
+.date-menu{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.4);
+}
+.date-menu .date-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.date-menu .date-info .info-title{
+    margin: 0;
+    padding: 0 1rem;
+   justify-content:space-between;
+   height: 2rem;
+   line-height: 2rem;
+   font-size: 0.8rem;
+   background-color: @beauty-gray; 
+}
+.date-menu .date-info .date{
+    
+    background: #ffffff;
+    text-align: center;
+}
+.date-menu .date-info .date div{
+    flex: 1;
+    padding: 1rem;
+}
+.date-menu .date-info .date div input{
+    width: 100%;
+    margin: 0.5rem 0;
+    border: 1px solid @beauty-green;
+    border-radius: 4px;
+    line-height: 1.5rem;
+    text-align: center;
+    font-size: 0.6rem;
+}
+.date-menu .date-info .date div label{
+    font-size: 0.6rem;
+    color: #666666;
+}
+
+//表格
+.data-title{
+    background-color: #f8f8f8;
+    line-height: 1.2rem;
+} 
+.data-title li,.data-content li{
+    text-align: center;
+    font-size: 0.6rem;
+}
+.data-content .data-item{
+    align-items:center; 
+    padding: 0.8rem 0;
+    border-bottom: 1px solid @beauty-gray;
+    border-left: 1px solid @beauty-gray;
+    border-right: 1px solid @beauty-gray;
+}
+.data-content li:nth-child(1) span{
+    display: inline-block;
+    width: 0.8rem;
+    line-height: 0.8rem;
+    color: #ffffff;
+    background-color: @beauty-blue;
+    border-radius: 50%;
+}
+.data-content li:nth-child(3){
+    font-size: 0.7rem;
+    color: @beauty-danger; 
+   
+}
+
+
+//底部bread-crumbs
+.bread-crumbs{
+    height: 2.86rem;
+    padding: 0;
+}
+.bread-crumbs a{
+    flex: 1;
+    border-right: 1px solid #e1e1e1;
+    align-items:center; 
+    justify-content:center;
+    color: @beauty-green;
+}
+.bread-crumbs a:last-child{
+    border-right: none;
+}
+.bread-crumbs a span{
+    font-size: 0.7rem !important;
+}
+
+

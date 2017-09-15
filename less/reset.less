@@ -1,0 +1,43 @@
+@import "common.less";
+body,ul,li,p{margin: 0;padding: 0;}
+body{background-color: #f4f4fc;}
+//全局链接
+a {
+  color: #3d4145;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a:active {
+  color: #3d4145;
+} 
+
+ul,li{
+    list-style: none;
+}
+
+.fr{ float: right;}
+.fl{ float: left;} 
+
+//重置sui 一些样式 
+
+.card{
+    box-shadow: 0 0 5px rgba(102,102,102,.1);
+    margin: 0.3rem;
+}
+.actions-modal-button.bg-danger{
+    background: @beauty-danger;
+}
+
+.actions-modal-button{
+    font-size: 0.8rem;
+    color: #666666;
+}
+
+//选项卡 
+.buttons-tab{
+    background: @beauty-gray;
+} 
+.buttons-tab .button.active{
+    color: @beauty-green;
+    border-color: @beauty-green;
+}

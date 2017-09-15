@@ -1,0 +1,26 @@
+body,p,ul,li,h1,h2,h3,h4{
+	margin: 0;
+	padding: 0;
+}
+.page-content{
+	padding: 20px 15px 15px;
+}
+.header h2{
+	font-size: 24px;
+	font-weight: normal;
+}
+.header p{
+	margin-top: 10px;
+	font-size: 16px;
+	color: #8c8c8c;
+}
+.main{
+	margin: 20px 0;
+}
+.footer{
+	margin: 20px 0;
+}
+.footer p{
+	font-size: 16px;
+	color: #8c8c8c;
+}

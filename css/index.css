@@ -1,0 +1,211 @@
+.flex-row {
+  display: flex;
+}
+.bg-white {
+  background: #ffffff;
+}
+.date-menu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.date-menu .date-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.date-menu .date-info .info-title {
+  margin: 0;
+  padding: 0 1rem;
+  justify-content: space-between;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 0.8rem;
+  background-color: #f7f7f8;
+}
+.date-menu .date-info .date {
+  background: #ffffff;
+  text-align: center;
+}
+.date-menu .date-info .date div {
+  flex: 1;
+  padding: 1rem;
+}
+.date-menu .date-info .date div input {
+  width: 100%;
+  margin: 0.5rem 0;
+  border: 1px solid #1AC1B3;
+  border-radius: 4px;
+  line-height: 1.5rem;
+  text-align: center;
+  font-size: 0.6rem;
+}
+.date-menu .date-info .date div label {
+  font-size: 0.6rem;
+  color: #666666;
+}
+.bread-crumbs {
+  height: 2.86rem;
+  padding: 0;
+}
+.bread-crumbs a {
+  flex: 1;
+  border-right: 1px solid #e1e1e1;
+  align-items: center;
+  justify-content: center;
+  color: #1AC1B3;
+}
+.bread-crumbs a:nth-child(3) {
+  border-right: none;
+}
+.bread-crumbs a span {
+  font-size: 0.7rem !important;
+}
+body,
+ul,
+li,
+p {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #f4f4fc;
+}
+a {
+  color: #3d4145;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a:active {
+  color: #3d4145;
+}
+ul,
+li {
+  list-style: none;
+}
+.fr {
+  float: right;
+}
+.fl {
+  float: left;
+}
+.card {
+  box-shadow: 0 0 5px rgba(102, 102, 102, 0.1);
+  margin: 0.3rem;
+}
+.actions-modal-button.bg-danger {
+  background: #fe7d7f;
+}
+.buttons-tab {
+  background: #f7f7f8;
+}
+.buttons-tab .button.active {
+  color: #1AC1B3;
+  border-color: #1AC1B3;
+}
+.header {
+  padding: 1rem;
+  height: 9.275rem;
+  background: url(../imges/header-bg.jpg);
+  background-size: 100% 100%;
+  color: #ffffff;
+}
+.header a {
+  color: #ffffff;
+}
+.header .top-bar {
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+.header .performance {
+  margin-top: 1.5rem;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.header .performance > span {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  color: ffffff;
+  font-size: 0.8rem;
+  line-height: 2rem;
+  font-weight: bold;
+}
+.header .performance div > span,
+div > p {
+  font-size: 0.6rem;
+}
+.header .performance div > p > span {
+  font-size: 1.3rem;
+}
+.main .sub-bar {
+  padding: 0.75rem 0;
+  align-items: center;
+  text-align: center;
+}
+.main .sub-bar a {
+  flex: 1;
+  font-size: 0.6rem;
+  color: #333333;
+}
+.main .sub-bar a span:first-child {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: #1AC1B3;
+}
+.main .main-info {
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.main .main-info .item {
+  -webkit-flex-basis: 33%;
+  width: 33%;
+  height: 4.5rem;
+  text-align: center;
+  font-size: 0.6rem;
+  border-right: 1px solid #e5e5e5;
+}
+.main .main-info .border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+.main .main-info .border-right {
+  border-right: 1px solid #e5e5e5;
+}
+.main .main-info .item img {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0.8rem auto 0.3rem;
+}
+.card-list .card {
+  padding: 1rem;
+  line-height: 1rem;
+}
+.card-list .card a {
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.6rem;
+}
+.card-list .card a p {
+  line-height: 0.8rem;
+}
+.card-list .card a p:nth-child(1) {
+  align-items: center;
+}
+.card-list .card a p:nth-child(1) img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+.card-list .card a p:nth-child(2) {
+  color: #1AC1B3;
+}
+.card-list .card a p:nth-child(2) span {
+  color: #cccccc;
+}
