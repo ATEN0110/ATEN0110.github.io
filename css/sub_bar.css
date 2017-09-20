@@ -184,3 +184,54 @@ li {
 .card li:nth-child(3) p:nth-child(2) span {
   font-size: 0.9rem;
 }
+.add-p {
+  font-size: 0.8rem;
+  color: #1AC1B3;
+}
+.reservation-list .card {
+  padding: 0.5rem 0.5rem;
+  margin: 0.5rem;
+}
+.reservation-list .card .card-header {
+  justify-content: normal;
+}
+.reservation-list .card .card-header img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
+}
+.reservation-list .card .card-header .round {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: #efeff4;
+  position: absolute;
+}
+.reservation-list .card .card-header .left {
+  bottom: -0.4rem;
+  left: -0.9rem;
+}
+.reservation-list .card .card-header .right {
+  bottom: -0.4rem;
+  right: -0.9rem;
+}
+.reservation-list .card .card-content-inner {
+  justify-content: space-between;
+  align-items: center;
+}
+.reservation-list .card .card-content-inner li {
+  color: #999999;
+  line-height: 1.2rem;
+  margin-left: 0;
+  text-align: left;
+}
+.reservation-list .card .card-content-inner li span {
+  color: #1AC1B3;
+}
+.reservation-list .card .card-content-inner img {
+  width: 3rem;
+  height: 3rem;
+}
+.reservation-list .card .card-footer {
+  color: #999999;
+}

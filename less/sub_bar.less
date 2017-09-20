@@ -1,0 +1,108 @@
+@import "common.less";
+@import "reset.less"; 
+
+.card-list {
+    margin-bottom: 3.8rem;
+}
+
+.card {
+    padding: 1rem 0.5rem;
+    align-items: center;
+    li:nth-child(1) img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+    }
+    li:nth-child(2) {
+        margin-left: 0.8rem;
+        p:nth-child(2) {
+            color: #999999;
+            font-size: 0.6rem;
+        }
+        p:nth-child(3) {
+            color: #999999;
+            font-size: 0.6rem;
+        }
+        img {
+            display: inline-block;
+            width: 0.7rem;
+            height: 0.7rem;
+        }
+    }
+    li:nth-child(3) {
+        flex: 1;
+        text-align: right;
+        color: #999999;
+        font-size: 0.6rem;
+        p:nth-child(2) {
+            color: @beauty-green;
+            span {
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+    
+
+
+
+//new add member
+
+.add-p{
+    font-size: 0.8rem;
+    color: @beauty-green;
+}
+
+
+//reservation-list
+
+.reservation-list{
+    .card{
+        padding: 0.5rem 0.5rem;
+        margin: 0.5rem;
+        .card-header{
+            justify-content:normal;
+            img{
+                width: 1.5rem;
+                height: 1.5rem;
+                margin-right: 1rem;
+            }
+            .round{
+                width: 0.8rem;
+                height: 0.8rem;
+                border-radius: 50%;
+                background: #efeff4;
+                position: absolute;
+            }
+            .left{
+                bottom: -0.4rem;
+                left: -0.9rem;
+            }
+            .right{
+                bottom: -0.4rem;
+                right: -0.9rem;
+            }
+        }
+        .card-content-inner{
+            justify-content: space-between;
+            align-items: center;
+            li{
+                color: #999999;
+                line-height: 1.2rem;
+                margin-left: 0;
+                text-align: left;
+                span{
+                    color: @beauty-green;
+                }
+            }
+            img{
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+        .card-footer{
+            color: #999999;
+        }
+        
+    }
+}

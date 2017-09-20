@@ -102,6 +102,52 @@ $(function() {
 		$.actions(groups);
 	});
 	
+	//筛选
+		$(document).on('click', '.filter-name', function() {
+		var buttons1 = [/*{
+				text: '选择排序方式',
+				label: true
+			},*/
+			{
+				text: '全部',
+				bold: true,
+				color: ''
+			}
+			,
+			{
+				text: '尾款',
+				bold: true,
+				color: ''
+			},
+			{
+				text: '退单',
+				bold: true,
+				color: ''
+			},
+			{
+				text: '补卡',
+				bold: true,
+				color: ''
+			},
+			{
+				text: '已付款',
+				bold: true,
+				color: ''
+			},
+			{
+				text: '待付款',
+				bold: true,
+				color: ''
+			}
+		];	
+		var buttons2 = [{
+			text: '取消',
+			bg: 'danger'
+		}];
+		var groups = [buttons1, buttons2];
+		$.actions(groups);
+	});
+	
 	//状态
 	$(document).on('click', '.status-name', function() {
 		var buttons1 = [/*{
