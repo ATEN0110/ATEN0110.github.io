@@ -183,12 +183,79 @@ li {
   color: #1AC1B3;
   border-color: #1AC1B3;
 }
-.top-tab {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+.bar {
+  position: static;
 }
-.tabs {
-  margin: 3rem 0;
+.list-block {
+  margin: 0 0;
+  font-size: 0.7rem;
+}
+.list-block .item-inner {
+  justify-content: normal;
+}
+.list-block .icon-1 {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 0.5rem;
+}
+.member-list .item-inner {
+  justify-content: normal;
+}
+.member-list .item-inner img {
+  width: 2rem;
+  border-radius: 0.2rem;
+  margin-right: 0.5rem;
+}
+.member-list .item-inner .info p:nth-child(1) {
+  font-size: 0.8rem;
+  align-items: center;
+}
+.member-list .item-inner .info p:nth-child(1) span:nth-child(2) {
+  padding: 0 0.3rem;
+  margin-left: 0.2rem;
+  background: #ff545d;
+  font-size: 0.5rem;
+  color: #ffffff;
+  border-radius: 4px;
+}
+.member-list .item-inner .info p:nth-child(2) {
+  align-items: center;
+  margin-top: 0.3rem;
+  font-size: 0.6rem;
+  color: #999999;
+}
+.member-list .item-inner .link {
+  align-items: center;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+.member-list .item-inner .link img {
+  width: 0.6rem;
+  margin-right: 0.2rem;
+}
+.member-list .item-inner .link span {
+  color: #f52525;
+  font-size: 0.6rem;
+}
+.page-title {
+  padding: 1rem;
+  color: #ff7d38;
+}
+.page-title img {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+.member-list .info p img {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-left: 0.3rem;
+}
+.footer {
+  margin-top: 2rem;
+  color: #999999;
+}
+.buttons-tab a {
+  font-size: 0.7rem !important;
 }
