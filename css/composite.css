@@ -1,0 +1,227 @@
+.flex-row {
+  display: flex;
+}
+.bg-white {
+  background: #ffffff;
+}
+.bg-green {
+  background: #1AC1B3 !important;
+}
+.text-center {
+  text-align: center;
+}
+.position-r {
+  position: relative;
+}
+.date-menu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.date-menu .date-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.date-menu .date-info .info-title {
+  margin: 0;
+  padding: 0 1rem;
+  justify-content: space-between;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 0.8rem;
+  background-color: #f7f7f8;
+}
+.date-menu .date-info .date {
+  background: #ffffff;
+  text-align: center;
+}
+.date-menu .date-info .date div {
+  flex: 1;
+  padding: 1rem;
+}
+.date-menu .date-info .date div input {
+  width: 100%;
+  margin: 0.5rem 0;
+  border: 1px solid #1AC1B3;
+  border-radius: 4px;
+  line-height: 1.5rem;
+  text-align: center;
+  font-size: 0.6rem;
+}
+.date-menu .date-info .date div label {
+  font-size: 0.6rem;
+  color: #666666;
+}
+.data-title {
+  background-color: #f8f8f8;
+  line-height: 1.2rem;
+}
+.data-title li,
+.data-content li {
+  text-align: center;
+  font-size: 0.6rem;
+}
+.data-content .data-item {
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #f7f7f8;
+  border-left: 1px solid #f7f7f8;
+  border-right: 1px solid #f7f7f8;
+}
+.data-content li:nth-child(1) span {
+  display: inline-block;
+  width: 0.8rem;
+  line-height: 0.8rem;
+  color: #ffffff;
+  background-color: #3398db;
+  border-radius: 50%;
+}
+.data-content li:nth-child(3) {
+  font-size: 0.7rem;
+  color: #fe7d7f;
+}
+.tab-row-4 .data-title li:nth-child(1),
+.tab-row-4 .data-content li:nth-child(1) {
+  width: 15%;
+}
+.tab-row-4 .data-title li:nth-child(2),
+.tab-row-4 .data-content li:nth-child(2) {
+  width: 33%;
+}
+.tab-row-4 .data-title li:nth-child(3),
+.tab-row-4 .data-content li:nth-child(3) {
+  width: 32%;
+}
+.tab-row-4 .data-title li:nth-child(4),
+.tab-row-4 .data-content li:nth-child(4) {
+  width: 20%;
+}
+.tab-row-5 .data-title li:nth-child(1),
+.tab-row-5 .data-item li:nth-child(1) {
+  width: 10%;
+}
+.tab-row-5 .data-title li:nth-child(2),
+.tab-row-5 .data-item li:nth-child(2) {
+  width: 30%;
+}
+.tab-row-5 .data-title li:nth-child(3),
+.tab-row-5 .data-item li:nth-child(3) {
+  width: 20%;
+}
+.tab-row-5 .data-title li:nth-child(4),
+.tab-row-5 .data-item li:nth-child(4) {
+  width: 20%;
+}
+.tab-row-5 .data-title li:nth-child(5),
+.tab-row-5 .data-item li:nth-child(5) {
+  width: 20%;
+}
+.bread-crumbs {
+  height: 2.86rem;
+  padding: 0;
+}
+.bread-crumbs a {
+  flex: 1;
+  border-right: 1px solid #e1e1e1;
+  align-items: center;
+  justify-content: center;
+  color: #1AC1B3;
+}
+.bread-crumbs a:last-child {
+  border-right: none;
+}
+.bread-crumbs a span {
+  font-size: 0.7rem !important;
+}
+body,
+ul,
+li,
+p {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #f4f4fc;
+  font-size: 0.7rem;
+}
+a {
+  color: #3d4145;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a:active {
+  color: #3d4145;
+}
+ul,
+li {
+  list-style: none;
+}
+.fr {
+  float: right;
+}
+.fl {
+  float: left;
+}
+.card {
+  box-shadow: 0 0 5px rgba(102, 102, 102, 0.1);
+  margin: 0.3rem;
+}
+.actions-modal-button.bg-danger {
+  background: #fe7d7f;
+}
+.actions-modal-button {
+  font-size: 0.8rem;
+  color: #666666;
+}
+.buttons-tab {
+  background: #f7f7f8;
+}
+.buttons-tab .button.active {
+  color: #1AC1B3;
+  border-color: #1AC1B3;
+}
+.content-block-title {
+  margin: 0.5rem ;
+}
+.list-box {
+  margin: 0.5rem 0;
+  font-size: 0.75rem;
+}
+.list-box .box-header {
+  padding: 0.5rem;
+  justify-content: space-between;
+  line-height: 2.5rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+.list-box .box-header p:nth-child(2) {
+  color: #1AC1B3;
+}
+.list-box .box-header p:nth-child(2) span {
+  color: #999999;
+}
+.list-box .box-body {
+  flex-wrap: wrap;
+}
+.list-box .box-body .border-right {
+  border-right: 1px solid #e1e1e1;
+}
+.list-box .box-body .border-bottom {
+  border-bottom: 1px solid #e1e1e1;
+}
+.list-box .box-body a {
+  display: block;
+  width: 50%;
+  height: 5rem;
+  text-align: center;
+}
+.list-box .box-body a img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0.8rem auto 0.5rem;
+}
+.list-box:last-child {
+  margin-bottom: 3.4rem;
+}
