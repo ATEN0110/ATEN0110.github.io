@@ -5,10 +5,13 @@
   background: #ffffff;
 }
 .bg-green {
-  background: #1AC1B3;
+  background: #1AC1B3 !important;
 }
 .text-center {
   text-align: center;
+}
+.position-r {
+  position: relative;
 }
 .date-menu {
   position: fixed;
@@ -80,6 +83,42 @@
   font-size: 0.7rem;
   color: #fe7d7f;
 }
+.tab-row-4 .data-title li:nth-child(1),
+.tab-row-4 .data-content li:nth-child(1) {
+  width: 15%;
+}
+.tab-row-4 .data-title li:nth-child(2),
+.tab-row-4 .data-content li:nth-child(2) {
+  width: 33%;
+}
+.tab-row-4 .data-title li:nth-child(3),
+.tab-row-4 .data-content li:nth-child(3) {
+  width: 32%;
+}
+.tab-row-4 .data-title li:nth-child(4),
+.tab-row-4 .data-content li:nth-child(4) {
+  width: 20%;
+}
+.tab-row-5 .data-title li:nth-child(1),
+.tab-row-5 .data-item li:nth-child(1) {
+  width: 10%;
+}
+.tab-row-5 .data-title li:nth-child(2),
+.tab-row-5 .data-item li:nth-child(2) {
+  width: 30%;
+}
+.tab-row-5 .data-title li:nth-child(3),
+.tab-row-5 .data-item li:nth-child(3) {
+  width: 20%;
+}
+.tab-row-5 .data-title li:nth-child(4),
+.tab-row-5 .data-item li:nth-child(4) {
+  width: 20%;
+}
+.tab-row-5 .data-title li:nth-child(5),
+.tab-row-5 .data-item li:nth-child(5) {
+  width: 20%;
+}
 .bread-crumbs {
   height: 2.86rem;
   padding: 0;
@@ -106,6 +145,7 @@ p {
 }
 body {
   background-color: #f4f4fc;
+  font-size: 0.7rem;
 }
 a {
   color: #3d4145;
@@ -184,4 +224,31 @@ li {
 }
 .data-list li:nth-child(4) {
   width: 33%;
+}
+/*----------员工业绩分析-----------*/
+.header {
+  height: 10rem;
+  background: #1AC1B3;
+  color: #FFFFFF;
+}
+.header img {
+  width: 4rem;
+  height: 4rem;
+  margin-top: 1rem;
+}
+.header p {
+  font-size: 0.8rem;
+}
+.header .data-box {
+  padding: 0 2rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 2rem;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.1);
+}
+.header .data-box p {
+  font-size: 0.7rem;
 }
