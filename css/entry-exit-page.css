@@ -38,13 +38,7 @@ body {
 	display: flex;
 	flex-wrap:wrap;
 }
-.file-box .input-box{
-	display: block;
-	width: 4rem;
-	height: 4rem;
-	background: url(../z_add.png) no-repeat;
-    background-size: 100% 100%;
-}
+
 
 
 .file {
@@ -52,7 +46,7 @@ body {
     display: inline-block;
     width: 24%;
 	height: 4rem;
-	background: url(z_add.png) no-repeat;
+	background: url(../imges/z_add.png) no-repeat;
     background-size: 100% 100%;
     margin-right: 1%;
     overflow: hidden;
