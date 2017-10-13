@@ -5,10 +5,11 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<title>出入境记录查询申请</title>
-		<link rel="stylesheet" href="css/entry-exit-page.css" />
+		
 		<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
 		<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
 		<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+		<link rel="stylesheet" href="css/entry-exit.css" />
 
 	</head>
 
@@ -46,10 +47,10 @@
 				</ul>
 			</div>
 			<div class="my-card bg-white ">
-				<div class="my-title">相关资料 <span>(工作证，查询函或介绍信)</span></div>
+				<div class="my-title">相关资料 <span>(工作证，查询函或介绍信。最多上传3张)</span></div>
 				<div class="file-box">
 					<a href="javascript:;" class="file">
-						<input type="file" name="" id="file" multiple onchange="imgChange('file-box','file');">
+						<input type="file" name="" id="file" multiple onchange="imgChange('file-box','file',3);">
 					</a>
 				</div>
 			</div>
@@ -74,31 +75,41 @@
 
 		</div>
 		<script type="text/javascript">
-			function imgChange(obj1, obj2) {
-
-				var files = document.getElementById("file");
+			
+			function imgChange(obj1, obj2, cound) {
+				var  addImgs = document.getElementsByClassName('add-img');
+				var file = document.getElementById("file");
 				//存放图片的父级元素
 				var imgContainer = document.getElementsByClassName(obj1)[0];
 				//获取图片文件
-				var fileList = files.files;
+				fileList = file.files;
 				//文本框的父级元素
 				var inputs = document.getElementsByClassName(obj2)[0];
 				var imgArr = [];
-				//遍历获取得到的图片
-				for(var i = 0; i < fileList.length; i++) {
-					var imgUrl = window.URL.createObjectURL(files.files[i]);
-					imgArr.push(imgUrl);
-					var img = document.createElement("img");
-					img.setAttribute("src", imgArr[i]);
-					var imgAdd = document.createElement("div");
-					imgAdd.setAttribute("class", "add-img");
-					imgAdd.appendChild(img);
-					imgContainer.appendChild(imgAdd);
-				};
+				if( addImgs.length + fileList.length <= cound){
+					//遍历获取得到的图片
+					for(var i = 0; i < fileList.length; i++) {
+						var imgUrl = window.URL.createObjectURL(file.files[i]);
+						
+						imgArr.push(imgUrl);
+						var img = document.createElement("img");
+						img.setAttribute("src", imgArr[i]);
+						var imgAdd = document.createElement("div");
+						imgAdd.setAttribute("class", "add-img");
+						imgAdd.appendChild(img);
+						imgContainer.appendChild(imgAdd);
+						
+					};
+				}else{
+					alert('最多上传3张');
+				}
+
 				imgRemove();
+				
 			};
 
 			function imgRemove() {
+				
 				var imgList = document.getElementsByClassName("add-img");
 				var mask = document.getElementsByClassName("mask-box")[0];
 				var cancel = document.getElementsByClassName("cancel")[0];
@@ -107,33 +118,22 @@
 					(function(i) {
 						imgList[i].onclick = function() {
 							var t = this;
+							console.log(t);
 							mask.style.display = "block";
 							cancel.onclick = function() {
 								mask.style.display = "none";
 							};
 							sure.onclick = function() {
 								mask.style.display = "none";
-								t.style.display = "none";
+								t.parentNode.removeChild(t);
 							};
 						};
 
 					})(i);
 				};
+			
 			};
 
-			/*$(".file").on("change","input[type='file']",function(){
-			    var filePath=$(this).val();
-			    if(filePath.indexOf("jpg")!=-1 || filePath.indexOf("png")!=-1){
-			        $(".fileerrorTip").html("").hide();
-			        var arr=filePath.split('\\');
-			        var fileName=arr[arr.length-1];
-			        $(".showFileName").html(fileName);
-			    }else{
-			        $(".showFileName").html("");
-			        $(".fileerrorTip").html("您未上传文件，或者您上传文件类型有误！").show();
-			        return false 
-			    }
-			})*/
 		</script>
 
 	</body>
