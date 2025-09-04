@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋转圆圈动画</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .center-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #ff6b6b, #ffa726);
+            border-radius: 50%;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 250px;
+            height: 250px;
+            transform: translate(-50%, -50%);
+            animation: rotate 4s linear infinite;
+        }
+
+        .small-circle {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .circle-1 {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+        }
+
+        .circle-2 {
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background: linear-gradient(45deg, #43e97b, #38f9d7);
+        }
+
+        .circle-3 {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #fa709a, #fee140);
+        }
+
+        .circle-4 {
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background: linear-gradient(45deg, #a8edea, #fed6e3);
+        }
+
+        /* 反向旋转小圆圈，保持其内容正向 */
+        .small-circle {
+            animation: counter-rotate 4s linear infinite;
+        }
+
+        /* 高亮最前面的圆圈 */
+        .small-circle.front {
+            transform: scale(1.2);
+            z-index: 20;
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+        }
+
+        @keyframes rotate {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        @keyframes counter-rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        /* 数据显示样式 */
+        .data-content {
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .data-value {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .data-label {
+            font-size: 8px;
+            opacity: 0.8;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 480px) {
+            .container {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .center-circle {
+                width: 100px;
+                height: 100px;
+                font-size: 16px;
+            }
+            
+            .orbit {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .small-circle {
+                width: 40px;
+                height: 40px;
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="center-circle">
+            中心
+        </div>
+        
+        <div class="orbit">
+            <div class="small-circle circle-1" data-position="1">
+                <div class="data-content">
+                    <div class="data-value">85%</div>
+                    <div class="data-label">CPU</div>
+                </div>
+            </div>
+            <div class="small-circle circle-2" data-position="2">
+                <div class="data-content">
+                    <div class="data-value">12GB</div>
+                    <div class="data-label">内存</div>
+                </div>
+            </div>
+            <div class="small-circle circle-3" data-position="3">
+                <div class="data-content">
+                    <div class="data-value">2.4GB</div>
+                    <div class="data-label">网络</div>
+                </div>
+            </div>
+            <div class="small-circle circle-4" data-position="4">
+                <div class="data-content">
+                    <div class="data-value">45°C</div>
+                    <div class="data-label">温度</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 动态更新最前面圆圈的高亮效果
+        function updateFrontCircle() {
+            const circles = document.querySelectorAll('.small-circle');
+            const orbit = document.querySelector('.orbit');
+            const rotation = parseFloat(window.getComputedStyle(orbit).transform.match(/matrix\(([^)]+)\)/)?.[1]?.split(', ')[0]) || 1;
+            
+            // 计算当前旋转角度
+            const angle = Math.atan2(
+                parseFloat(window.getComputedStyle(orbit).transform.match(/matrix\(([^)]+)\)/)?.[1]?.split(', ')[1]) || 0,
+                rotation
+            ) * 180 / Math.PI;
+            
+            // 移除所有高亮
+            circles.forEach(circle => circle.classList.remove('front'));
+            
+            // 确定哪个圆圈在最前面（基于旋转角度）
+            const normalizedAngle = ((angle % 360) + 360) % 360;
+            let frontIndex;
+            
+            if (normalizedAngle >= 315 || normalizedAngle < 45) {
+                frontIndex = 0; // circle-1 (顶部)
+            } else if (normalizedAngle >= 45 && normalizedAngle < 135) {
+                frontIndex = 1; // circle-2 (右侧)
+            } else if (normalizedAngle >= 135 && normalizedAngle < 225) {
+                frontIndex = 2; // circle-3 (底部)
+            } else {
+                frontIndex = 3; // circle-4 (左侧)
+            }
+            
+            circles[frontIndex].classList.add('front');
+        }
+
+        // 每100毫秒更新一次高亮效果
+        setInterval(updateFrontCircle, 100);
+
+        // 动态数据更新示例
+        function updateData() {
+            const dataElements = [
+                { selector: '.circle-1 .data-value', getValue: () => Math.floor(Math.random() * 40 + 60) + '%' },
+                { selector: '.circle-2 .data-value', getValue: () => (Math.random() * 8 + 8).toFixed(1) + 'GB' },
+                { selector: '.circle-3 .data-value', getValue: () => (Math.random() * 2 + 1).toFixed(1) + 'GB' },
+                { selector: '.circle-4 .data-value', getValue: () => Math.floor(Math.random() * 20 + 35) + '°C' }
+            ];
+
+            dataElements.forEach(item => {
+                const element = document.querySelector(item.selector);
+                if (element) {
+                    element.textContent = item.getValue();
+                }
+            });
+        }
+
+        // 每3秒更新一次数据
+        setInterval(updateData, 3000);
+        
+        // 初始化
+        updateFrontCircle();
+    </script>
+</body>
+</html>
