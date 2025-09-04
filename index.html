@@ -1,95 +1,258 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-		<title>内部服务子平台</title>
-		<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
-		<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
-		
-		<link rel="stylesheet" href="css/index.css" />
-	</head>
-	<body>
-		<div class="page-group ">
-	        <div class="page page-current page-index ">
-	        	<div class="content native-scroll">
-		        	<div class="header">
-		        		<img src="imges/header-bg.jpg" alt="" width="100%"/>
-		        	</div>
-		        	<div class="main">
-		        		<div class="sub-bar card">
-				        	<a href="#" external>
-				        		<span>10</span>
-				        		<span>待办事项</span>
-				        	</a>
-				        	<a href="#" external>
-				        		<span>22</span>
-				        		<span>已办事项</span>
-				        	</a>
-				        	<a href="#" external>
-				        		<span>9</span>
-				        		<span>跟踪事项</span>
-				        	</a>
-				        	<a href="#" external>
-				        		<span>3</span>
-				        		<span>待开会议</span>
-				        	</a>
-				        </div>
-				        <div class="main-info card">
-		        			<a href="#" class="item border-right border-bottom" external>
-		        				<img src="imges/item1-bg.png" alt="" />
-		        				<span>我的快捷</span>
-		        			</a>
-		        			<a href="#" class="item border-right border-bottom" external>
-		        				<img src="imges/item2-bg.png" alt="" />
-		        				<span>协同工具</span>
-		        			</a>
-		        			<a href="#" class="item border-bottom" external>
-		        				<img src="imges/item3-bg.png" alt="" />
-		        				<span>表单应用</span>
-		        			</a>
-		        			<a href="#" class="item border-right border-bottom" external>
-		        				<img src="imges/item4-bg.png" alt="" />
-		        				<span>公文管理</span>
-		        			</a>
-		        			<a href="#" class="item border-right border-bottom">
-		        				<img src="imges/item5-bg.png" alt="" />
-		        				<span>综合办公</span>
-		        			</a>
-		        			<a href="#" class="item border-bottom" external>
-		        				<img src="imges/item6-bg.png" alt="" />
-		        				<span>我的工具</span>
-		        			</a>
-		        			<a href="#" class="item border-right">
-		        				<img src="imges/item7-bg.png" alt="" />
-		        				<span>文化建设</span>
-		        			</a>
-		        			<a href="#" class="item border-right" external>
-		        				<img src="imges/item1-bg.png" alt="" />
-		        				<span>目标管理</span>
-		        			</a>
-		        			<a href="#" class="item border-right" external>
-		        				<img src="imges/item2-bg.png" alt="" />
-		        				<span>业务继承</span>
-		        			</a>
-		        		</div>
-		        		<div class="card-list">
-		        			<div class="card ">
-			    				<a href="entry-exit.html" class="flex-row" external>
-			    					<p  class="flex-row">
-			    						<img src="imges/cardlist1-icon.png" alt="" />
-			    						<span>出入境记录查询申请</span>
-			    					</p>
-			    				</a>
-			    			</div>
-		        		</div>
-		        	</div>
-		        	
-					
-	        	</div>
-	        </div>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋转圆圈动画</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+
+        /* 大圆圈 */
+        .main-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        /* 旋转轨道 */
+        .orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            animation: rotate 8s linear infinite;
+        }
+
+        /* 小圆圈容器 */
+        .small-circle {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+            font-size: 14px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        /* 四个小圆圈的位置 */
+        .small-circle:nth-child(1) {
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        }
+
+        .small-circle:nth-child(2) {
+            top: 50%;
+            right: -30px;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+        }
+
+        .small-circle:nth-child(3) {
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #45b7d1, #96c93d);
+        }
+
+        .small-circle:nth-child(4) {
+            top: 50%;
+            left: -30px;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        /* 旋转动画 */
+        @keyframes rotate {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        /* 数据展示样式 */
+        .data-display {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .data-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .data-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .data-unit {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* 当前激活的小圆圈高亮效果 */
+        .small-circle.active {
+            transform: scale(1.2);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 480px) {
+            .container {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .main-circle {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .orbit {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .small-circle {
+                width: 45px;
+                height: 45px;
+                font-size: 12px;
+            }
+            
+            .data-display {
+                padding: 15px;
+            }
+            
+            .data-title {
+                font-size: 16px;
+            }
+            
+            .data-value {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 大圆圈 -->
+        <div class="main-circle"></div>
+        
+        <!-- 旋转轨道和四个小圆圈 -->
+        <div class="orbit">
+            <div class="small-circle active" data-value="85" data-unit="%" data-title="完成率">85%</div>
+            <div class="small-circle" data-value="1,234" data-unit="个" data-title="总数">1,234</div>
+            <div class="small-circle" data-value="567" data-unit="次" data-title="访问">567</div>
+            <div class="small-circle" data-value="89" data-unit="分" data-title="评分">89</div>
         </div>
-	
-	</body>
+        
+        <!-- 数据展示区域 -->
+        <div class="data-display">
+            <div class="data-title">完成率</div>
+            <div class="data-value">85</div>
+            <div class="data-unit">%</div>
+        </div>
+    </div>
+
+    <script>
+        // 获取所有小圆圈和数据展示元素
+        const smallCircles = document.querySelectorAll('.small-circle');
+        const dataDisplay = document.querySelector('.data-display');
+        const dataTitle = dataDisplay.querySelector('.data-title');
+        const dataValue = dataDisplay.querySelector('.data-value');
+        const dataUnit = dataDisplay.querySelector('.data-unit');
+
+        // 更新数据展示
+        function updateDataDisplay(activeCircle) {
+            const title = activeCircle.getAttribute('data-title');
+            const value = activeCircle.getAttribute('data-value');
+            const unit = activeCircle.getAttribute('data-unit');
+            
+            dataTitle.textContent = title;
+            dataValue.textContent = value;
+            dataUnit.textContent = unit;
+        }
+
+        // 设置初始状态
+        updateDataDisplay(smallCircles[0]);
+
+        // 监听动画事件，更新激活状态
+        let currentIndex = 0;
+        setInterval(() => {
+            // 移除所有激活状态
+            smallCircles.forEach(circle => circle.classList.remove('active'));
+            
+            // 添加新的激活状态
+            smallCircles[currentIndex].classList.add('active');
+            
+            // 更新数据展示
+            updateDataDisplay(smallCircles[currentIndex]);
+            
+            // 更新索引
+            currentIndex = (currentIndex + 1) % smallCircles.length;
+        }, 2000); // 每2秒切换一次
+
+        // 添加鼠标悬停效果
+        smallCircles.forEach(circle => {
+            circle.addEventListener('mouseenter', () => {
+                circle.style.transform += ' scale(1.1)';
+            });
+            
+            circle.addEventListener('mouseleave', () => {
+                circle.style.transform = circle.style.transform.replace(' scale(1.1)', '');
+            });
+        });
+    </script>
+</body>
 </html>
